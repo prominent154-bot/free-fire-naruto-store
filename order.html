@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Place Order - Free Fire Naruto Store</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #090a0f;
+    color: white;
+}
+
+header {
+    padding: 30px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #ff4b00, #ff0055);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.order-box {
+    background: #171720;
+    border: 1px solid #292936;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 7px;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.price {
+    color: #ffd000;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff4b00, #ff0055);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.back {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #aaa;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔥 FREE FIRE × NARUTO 🔥</h1>
+    <p>Place Your Order</p>
+</header>
+
+<div class="container">
+
+    <div class="order-box">
+
+        <h2>🛒 Order Details</h2>
+
+        <p>Selected item:</p>
+        <h2 id="item">Loading...</h2>
+
+        <div class="price" id="price">₦0</div>
+
+        <label>Free Fire Player ID</label>
+        <input type="text" id="playerId" placeholder="Enter your Player ID">
+
+        <label>Payment Method</label>
+        <select id="payment">
+            <option value="">Select payment method</option>
+            <option>Bank Transfer</option>
+            <option>Contact Seller</option>
+        </select>
+
+        <button onclick="placeOrder()">Place Order</button>
+
+        <a class="back" href="index.html">← Back to Store</a>
+
+    </div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const item = params.get("item");
+
+const prices = {
+    "Naruto Bundle": "₦5,000",
+    "Sasuke Bundle": "₦5,000",
+    "Itachi Bundle": "₦6,000"
+};
+
+document.getElementById("item").textContent = item || "Unknown Item";
+document.getElementById("price").textContent = prices[item] || "₦0";
+
+function placeOrder() {
+
+    const playerId = document.getElementById("playerId").value;
+    const payment = document.getElementById("payment").value;
+
+    if (!playerId) {
+        alert("Please enter your Free Fire Player ID.");
+        return;
+    }
+
+    if (!payment) {
+        alert("Please select a payment method.");
+        return;
+    }
+
+    alert(
+        "Order received!\\n\\n" +
+        "Item: " + item + "\\n" +
+        "Price: " + prices[item] + "\\n" +
+        "Player ID: " + playerId
+    );
+}
+
+</script>
+
+</body>
+</html>
