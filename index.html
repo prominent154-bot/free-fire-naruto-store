@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Fire Naruto Store</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0b0b12;
+  color: white;
+}
+
+header {
+  background: linear-gradient(135deg, #ff6a00, #ff0055);
+  padding: 25px 15px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+header p {
+  margin-top: 8px;
+}
+
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #171722;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #29293a;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.price {
+  color: #ffd000;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+button {
+  border: none;
+  background: linear-gradient(135deg, #ff6a00, #ff0055);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.login {
+  margin-top: 30px;
+  background: #171722;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  margin: 7px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🔥 FREE FIRE × NARUTO 🔥</h1>
+  <p>Naruto Bundles & Items Store</p>
+</header>
+
+<div class="container">
+
+  <h2>🛒 Available Items</h2>
+
+  <div class="products">
+
+    <div class="card">
+      <h2>🍥 Naruto Bundle</h2>
+      <p>Classic Naruto-themed bundle.</p>
+      <div class="price">₦5,000</div>
+      <button onclick="buy('Naruto Bundle')">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <h2>⚡ Sasuke Bundle</h2>
+      <p>Powerful Sasuke-themed bundle.</p>
+      <div class="price">₦5,000</div>
+      <button onclick="buy('Sasuke Bundle')">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <h2>🔥 Itachi Bundle</h2>
+      <p>Itachi-themed special bundle.</p>
+      <div class="price">₦6,000</div>
+      <button onclick="buy('Itachi Bundle')">Buy Now</button>
+    </div>
+
+  </div>
+
+  <div class="login">
+    <h2>👤 Create Account</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="signup()">Sign Up</button>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Free Fire Naruto Store
+</footer>
+
+<script>
+function signup() {
+  const username = document.getElementById("username").value;
+
+  if (!username) {
+    alert("Please enter a username.");
+    return;
+  }
+
+  alert("Account created for " + username + "!");
+}
+
+function buy(item) {
+  alert("You selected: " + item);
+}
+</script>
+
+</body>
+</html>
